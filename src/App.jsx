@@ -5,6 +5,7 @@ import "./App.css";
 import { store, cart } from "./data";
 import Store from "./views/Store";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
+import Nav from "./components/Nav";
 
 class App extends Component {
   state = {
@@ -26,7 +27,12 @@ class App extends Component {
           <Route
             exact
             path="/"
-            render={() => <Store store={this.state.storeData} />}
+            render={() => (
+              <div>
+                <Nav />
+                <Store store={this.state.storeData} />
+              </div>
+            )}
           />
         </Switch>
       </BrowserRouter>
